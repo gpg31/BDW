@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search Blood Inventory</a></li>
+                <li><a href="donor_dashboard.html">Donor Dashboard</a></li>
+                <li><a href="recipient_dashboard.html">Recipient Dashboard</a></li>
+                <li><a href="login.html" class="btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="admin-section container">
+        <h2>Manage Donors</h2>
+        <table>
+            <tr>
+                <th>Donor Name</th>
+                <th>Blood Type</th>
+                <th>Location</th>
+                <th>Contact</th>
+                <th>Action</th>
+            </tr>
+            <!-- Donor data will be dynamically inserted here -->
+            <tr>
+                <td>John Doe</td>
+                <td>O+</td>
+                <td>New York</td>
+                <td>(123) 456-7890</td>
+                <td><button>Edit</button> <button>Delete</button></td>
+            </tr>
+        </table>
+
+        <h2>Manage Blood Inventory</h2>
+        <table>
+            <tr>
+                <th>Blood Type</th>
+                <th>Quantity Available</th>
+                <th>Last Updated</th>
+                <th>Action</th>
+            </tr>
+            <!-- Inventory data will be dynamically inserted here -->
+            <tr>
+                <td>O+</td>
+                <td>20 Units</td>
+                <td>2024-10-15</td>
+                <td><button>Update</button></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Blood Donation. All rights reserved.</p>
+    </footer>
+</body>
+</html>

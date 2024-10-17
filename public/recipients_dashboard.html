@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipient Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Search Blood Inventory</h1>
+    </header>
+
+    <section class="search-section">
+        <form action="backend/search_blood.php" method="GET">
+            <label for="blood_type">Select Blood Type:</label>
+            <select id="blood_type" name="blood_type" required>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <section class="results-section">
+        <h2>Matching Donors</h2>
+        <table>
+            <tr>
+                <th>Donor Name</th>
+                <th>Blood Type</th>
+                <th>Location</th>
+                <th>Contact</th>
+            </tr>
+            <!-- Results from search will be dynamically inserted here -->
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Blood Donation. All rights reserved.</p>
+    </footer>
+</body>
+</html>

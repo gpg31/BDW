@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Blood Donation Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Blood Inventory</a></li>
+                <li><a href="donor_dashboard.html">Donor</a></li>
+                <li><a href="hospital_dashboard.html">Hospital</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html" class="btn">Register as Donor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Donate Blood, Save Lives</h1>
+            <p>Join our community of life-saving blood donors and help those in need. Become a donor today!</p>
+            <a href="register.html" class="btn">Register as Donor</a>
+        </div>
+    </section>
+
+    <section class="importance">
+        <div class="container">
+            <h2>Why Blood Donation Matters</h2>
+            <div class="content-boxes">
+                <div class="box">
+                    <h3>Help Save Lives</h3>
+                    <p>Each blood donation can save up to three lives. Your donation could help accident victims, cancer patients, and more.</p>
+                </div>
+                <div class="box">
+                    <h3>Boost Your Health</h3>
+                    <p>Donating blood can improve your health by balancing your iron levels and reducing the risk of heart disease.</p>
+                </div>
+                <div class="box">
+                    <h3>Make an Impact</h3>
+                    <p>Your contribution helps hospitals maintain a healthy blood supply, ensuring they are prepared for emergencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upcoming-drives">
+        <div class="container">
+            <h2>Upcoming Blood Donation Drives</h2>
+            <ul>
+                <li>Date: November 10, 2024 | Location: Community Center</li>
+                <li>Date: December 5, 2024 | Location: City Hospital</li>
+                <li>Date: January 15, 2025 | Location: University Campus</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="feedback">
+        <div class="container">
+            <h2>Feedback</h2>
+            <form id="feedback-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Feedback" required></textarea>
+                <button type="submit">Submit Feedback</button>
+                <div id="feedback-message" class="success-message" style="display:none;">Thank you for your feedback!</div>
+                <div id="error-message" class="error-message" style="display:none;">Please fill in all fields correctly.</div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Blood Donation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple form validation
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                document.getElementById('feedback-message').style.display = 'block';
+                document.getElementById('error-message').style.display = 'none';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('feedback-message').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
