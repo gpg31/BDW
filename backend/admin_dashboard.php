@@ -104,4 +104,9 @@ $result = $conn->query($sql);
 
 <?php
 $conn->close();
+<<<<<<< HEAD
 ?>
+=======
+?>
+
+>>>>>>> f82e4fa1ec9c0cfe5721c62a5b54cc0503021c59
