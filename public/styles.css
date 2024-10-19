@@ -3,14 +3,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fdfdfd;
+    background-color: #ffffff;
     color: #333;
 }
 
 header {
     background-color: #d9534f;
     /* Red color for header */
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 20px;
     text-align: center;
 }
@@ -21,7 +21,7 @@ header {
 }
 
 nav {
-    margin-top: 10px;
+    margin-top: 0px;
     /* Space between header and nav */
 }
 
@@ -31,6 +31,12 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+
+
+}
+
+.nav-right img {
+    height: 100%;
 }
 
 nav ul li {
@@ -49,10 +55,14 @@ nav ul li a:hover {
     /* Underline on hover */
 }
 
+.nav-right img {
+    height: 100%;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
-    /* Position for the pseudo-element */
+    /* Required for positioning the pseudo-element */
     background: url('images/hero-bg.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
@@ -63,6 +73,47 @@ nav ul li a:hover {
     overflow: hidden;
     /* Prevents overflow of pseudo-element */
 }
+
+/* Pseudo-element for hover effect */
+.hero::before {
+    content: '';
+    /* Required for creating a pseudo-element */
+    position: absolute;
+    /* Position it absolutely within the relative parent */
+    top: 0;
+    /* Aligns it to the top */
+    left: 0;
+    /* Aligns it to the left */
+    width: 100%;
+    /* Full width of the wrapper */
+    height: 100%;
+    /* Full height of the wrapper */
+    background-color: rgba(7, 7, 7, 0.732);
+    /* Light semi-transparent overlay */
+    opacity: 0;
+    /* Start with no visibility */
+    transition: opacity 0.5s;
+    /* Smooth transition for hover effect */
+    z-index: 0;
+    /* Places it behind the content */
+}
+
+.hero:hover::before {
+    opacity: 0.1;
+    /* Full visibility on hover */
+}
+
+/* Additional styles for the content within the hero section */
+.hero h1,
+/* Style for heading */
+.hero p {
+    /* Style for paragraphs, if needed */
+    z-index: 1;
+    /* Ensure text is above the background */
+    position: relative;
+    /* Positioning to maintain hierarchy */
+}
+
 
 .hero::before {
     content: '';
@@ -117,7 +168,10 @@ nav ul li a:hover {
 /* Importance Section */
 .importance {
     padding: 50px 0;
-    background-color: #d6bc98;
+    background: url('/public/images/4438751.jpg') no-repeat center center/cover;
+    /* Update with your image path */
+
+    /* 80% opacity */
 }
 
 .container {
@@ -137,12 +191,25 @@ h2 {
 }
 
 .box {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* 80% transparency */
+
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 30%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Increased shadow size */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+}
+
+.box:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* 80% transparency */
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
 }
 
 .box h3 {
@@ -224,7 +291,8 @@ form h1 {
 
 /* Feedback Section Styles */
 .feedback {
-    background-color: #f9f9f9;
+    background: rgba(255, 248, 248, 0);
+
     /* Light background */
     padding: 20px;
     border-radius: 5px;
@@ -403,13 +471,30 @@ footer {
 
 /* General Styles for Header and Nav */
 header {
-    background-color: #f8f9fa;
+
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+
+
     /* Light background for contrast */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+
+nav {
+    background: linear-gradient(to bottom, #ff0000 0%, #ffffff 100%);
+
+
+    /* Light background for contrast */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 25px 25px rgba(0, 0, 0, 0.1);
+    height: 100px;
 }
 
 nav ul {
@@ -417,6 +502,7 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    align-items: center;
 }
 
 nav ul li {
@@ -425,14 +511,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #ff3b30;
+    color: #ff0000;
     /* Highlight color on hover */
 }
 
@@ -804,4 +890,178 @@ body {
     /* Bold font on hover */
     color: #ff3b30;
     /* Change color on hover */
+}
+
+/* Search Bar Styles */
+.search-container {
+    display: flex;
+    align-items: center;
+    /* Center items vertically */
+    margin-left: 20px;
+    /* Space from the menu items */
+}
+
+#search-bar {
+    padding: 8px;
+    /* Padding inside the input */
+    font-size: 16px;
+    /* Font size for input */
+    border: 1px solid #fff;
+    /* Border color */
+    border-radius: 5px 0 0 5px;
+    /* Rounded corners for left side */
+    outline: none;
+    /* Remove outline on focus */
+    transition: border-color 0.3s;
+    /* Smooth border color transition */
+    background-color: #112c38;
+    /* Background color matching the navbar */
+    color: #fff;
+    /* Text color */
+}
+
+#search-bar:focus {
+    border-color: #ff497c;
+    /* Change border color on focus */
+}
+
+.search-button {
+    padding: 8px 12px;
+    /* Padding inside the button */
+    font-size: 16px;
+    /* Font size for button */
+    border: none;
+    /* Remove default border */
+    background-color: #ff497c;
+    /* Button background color */
+    color: #fff;
+    /* Button text color */
+    border-radius: 0 5px 5px 0;
+    /* Rounded corners for right side */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    transition: background-color 0.3s;
+    /* Smooth background color transition */
+}
+
+/* Button hover effect */
+.search-button:hover {
+    background-color: #ff1e4f;
+    /* Darker shade on hover */
+}
+
+.upcoming-drives {
+    background-image: url('/public/images/4438774.jpg') no-repeat center center/cover;
+    opacity: 0.8;
+    /* 80% opacity */
+    z-index: 1;
+    /* Ensures it's below the text */
+
+    background-size: cover;
+    /* Cover the entire section */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Do not repeat the background image */
+    padding: 40px;
+    /* Add padding for content */
+    color: #000000;
+    /* Text color */
+    text-align: center;
+    /* Center align text */
+    /* Semi-transparent black overlay */
+    z-index: 1;
+    /* Place overlay above background */
+    position: relative;
+    /* Position for overlay */
+
+}
+
+.upcoming-drives::before {
+    content: '';
+    position: absolute;
+    /* Position overlay */
+    top: 0;
+    /* Cover the entire section */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(255, 255, 255);
+    /* Semi-transparent overlay */
+    z-index: 1;
+    /* Place overlay above background */
+}
+
+.upcoming-drives h1,
+.upcoming-drives p {
+    position: relative;
+    /* Position text above overlay */
+    z-index: 2;
+    /* Ensure text is above overlay */
+}
+
+.background-wrapper {
+    position: relative;
+    /* Required for positioning the pseudo-element */
+    background-image: url('/public/images/4438774.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* Cover the entire section */
+    padding: 40px 20px;
+    /* Add some padding for spacing */
+    color: white;
+    /* Optional: Set text color for contrast */
+    overflow: hidden;
+    /* Prevent content from overflowing */
+}
+
+.background-wrapper::before {
+    content: '';
+    /* Required to create a pseudo-element */
+    position: absolute;
+    /* Position it absolutely within the relative parent */
+    top: 0;
+    /* Aligns it to the top */
+    left: 0;
+    /* Aligns it to the left */
+    width: 100%;
+    /* Full width of the wrapper */
+    height: 100%;
+    /* Full height of the wrapper */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Semi-transparent overlay */
+    opacity: 0;
+    /* Start with no visibility */
+    transition: opacity 0.5s;
+    /* Smooth transition for hover effect */
+    z-index: 0;
+    /* Places it behind the content */
+}
+
+.background-wrapper:hover::before {
+    opacity: 1;
+    /* Full visibility on hover */
+}
+
+/* Additional styles for the content within the section */
+h2 {
+    z-index: 1;
+    /* Ensure heading is above the background */
+    position: relative;
+    /* Positioning to maintain hierarchy */
+}
+
+ul {
+    z-index: 1;
+    /* Ensure list is above the background */
+    position: relative;
+    /* Positioning to maintain hierarchy */
+}
+
+.feedback {
+    z-index: 1;
+    /* Ensure feedback form is above the background */
+    position: relative;
+    /* Positioning to maintain hierarchy */
 }

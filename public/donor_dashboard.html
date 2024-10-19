@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donor Dashboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <h1>Welcome, [Donor Name]</h1>
+        <h1>Welcome Hero </h1>
     </header>
 
     <section class="dashboard">
         <div class="profile-box">
             <h2>Your Profile</h2>
+
+            <!-- Display Donation Statistics -->
+            <div class="donation-stats">
+                <p><strong>Total Donations:</strong> [Number of Donations]</p>
+                <p><strong>Last Donation Date:</strong> [Last Donation Date]</p>
+            </div>
+
             <form action="backend/update_profile.php" method="POST">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" value="[Donor Name]" required>
@@ -48,4 +57,5 @@
         <p>&copy; 2024 Blood Donation. All rights reserved.</p>
     </footer>
 </body>
+
 </html>

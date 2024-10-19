@@ -1,15 +1,37 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
+
+
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root"; // Update with your database username
+$password = "";     // Update with your database password
+$dbname = "blood_donation"; // Your database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL query to fetch user registration details
+$sql = "SELECT name, blood_type, location, email FROM users";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=../backend/admin_dashboard.php">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
-
 <body>
     <header>
         <div class="logo">
@@ -36,14 +58,24 @@
                 <th>Contact</th>
                 <th>Action</th>
             </tr>
-            <!-- Donor data will be dynamically inserted here -->
-            <tr>
-                <td>John Doe</td>
-                <td>O+</td>
-                <td>New York</td>
-                <td>(123) 456-7890</td>
-                <td><button>Edit</button> <button>Delete</button></td>
-            </tr>
+
+            <!-- PHP code to display the data from the database -->
+            <?php
+            if ($result->num_rows > 0) {
+                // Output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>" . $row["name"] . "</td>
+                            <td>" . $row["blood_type"] . "</td>
+                            <td>" . $row["location"] . "</td>
+                            <td>" . $row["email"] . "</td>
+                            <td><button>Edit</button> <button>Delete</button></td>
+                          </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5'>No donors found</td></tr>";
+            }
+            ?>
         </table>
 
         <h2>Manage Blood Inventory</h2>
@@ -54,7 +86,7 @@
                 <th>Last Updated</th>
                 <th>Action</th>
             </tr>
-            <!-- Inventory data will be dynamically inserted here -->
+            <!-- Placeholder inventory data; you can similarly fetch from the database -->
             <tr>
                 <td>O+</td>
                 <td>20 Units</td>
@@ -68,5 +100,8 @@
         <p>&copy; 2024 Blood Donation. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
+
+<?php
+$conn->close();
+?>
