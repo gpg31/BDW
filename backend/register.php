@@ -28,16 +28,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Prepare an SQL statement to insert user data
-        $sql = "INSERT INTO users (name, email, password, role, location) VALUES (?, ?, ?, 'donor', ?)";
+        $sql = "INSERT INTO users (name, email, password, role, location, blood_type) VALUES (?, ?, ?, 'donor', ?, ?)";
 
         // Use prepared statements to prevent SQL injection
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssss", $name, $email, $hashed_password, $location);
+        $stmt->bind_param("sssss", $name, $email, $hashed_password, $location, $blood_type);
 
         // Execute the query
         if ($stmt->execute()) {
             header("Location: success.html");
-    	    exit();
+            exit();
         } else {
             echo "<h2>Error: " . $stmt->error . "</h2>";
         }
@@ -52,4 +52,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Close the database connection
 $conn->close();
 ?>
-
