@@ -76,11 +76,12 @@ CREATE TABLE `hospitals` (
 --
 
 DROP TABLE IF EXISTS `hospitalstaffs`;
-CREATE TABLE `hospitalstaffs` (
-  `hsid` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `hosp_id` int(11) NOT NULL,
-  `contacts` varchar(20) DEFAULT NULL
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    hospital_id VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
