@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($name) && !empty($hospital_id) && !empty($email) && !empty($password)) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         
-        $sql = "INSERT INTO hospitalstaffs (name, hospital_id, email, password) VALUES (?, ?, ?, 'hospital_staff', ?)";
+        $sql = "INSERT INTO hospitalstaffs (name, hospital_id, email, password) VALUES (?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssss", $name, $email, $hashed_password, $hospital_id);
+        $stmt->bind_param("ssss", $name, $hospital_id, $email, $hashed_password);
 
         if ($stmt->execute()) {
             header("Location: success.html");
