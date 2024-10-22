@@ -48,6 +48,7 @@ nav ul li a {
     color: white;
     font-weight: bold;
     font-size: 16px;
+
 }
 
 nav ul li a:hover {
@@ -438,8 +439,8 @@ footer {
 .form-section h1 {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(0, 0, 0);
-    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 25px;
     /* Adjust this value to control how far above the form the heading is */
     position: relative;
     z-index: 2;
@@ -471,22 +472,26 @@ footer {
 
 /* General Styles for Header and Nav */
 header {
-
     background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
-
-
-    /* Light background for contrast */
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 100px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: space-around;
 }
 
 nav {
-    background: linear-gradient(to bottom, #ff0000 0%, #ffffff 100%);
-
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+    background: rgba(255, 255, 255, 0.8);
+    /* White background with opacity */
+    backdrop-filter: blur(400px);
+    /* Apply blur effect */
+    border-radius: 10px;
+    /* Optional: Add rounded corners */
 
     /* Light background for contrast */
 
@@ -511,8 +516,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-weight: bold;
+    font-size: 20px;
+    /* Increase font size */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Professional font family */
     transition: color 0.3s;
 }
 
