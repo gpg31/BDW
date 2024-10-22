@@ -180,6 +180,26 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
+.donation-stats {
+    background-color: #f9f9f9;  /* Light background color for contrast */
+    border: 1px solid #ddd;     /* Light gray border */
+    border-radius: 5px;         /* Rounded corners */
+    padding: 15px;              /* Padding around the content */
+    margin: 15px 0;             /* Margin above and below the box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.donation-stats p {
+    margin: 5px 0;              /* Spacing between paragraphs */
+    font-size: 1.1em;           /* Slightly larger text */
+    color: #333;                /* Dark gray text color for readability */
+}
+
+.donation-stats strong {
+    color: #0056b3;             /* Blue color for the strong emphasis */
+}
+
+
 h2 {
     text-align: center;
     margin-bottom: 30px;
