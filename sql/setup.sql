@@ -8,8 +8,9 @@ CREATE TABLE users (
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    blood_type ENUM('A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-') NOT NULL,
-    role ENUM('admin', 'donor', 'recipient', 'hospital_staff') NOT NULL
+    role ENUM('admin', 'donor', 'recipient', 'hospital_staff') NOT NULL,
+    location VARCHAR(20) NOT NULL,
+    blood_type VARCHAR(12)
 );
 
 -- Donations Table
