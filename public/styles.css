@@ -48,7 +48,6 @@ nav ul li a {
     color: white;
     font-weight: bold;
     font-size: 16px;
-
 }
 
 nav ul li a:hover {
@@ -179,26 +178,6 @@ nav ul li a:hover {
     width: 80%;
     margin: 0 auto;
 }
-
-.donation-stats {
-    background-color: #f9f9f9;  /* Light background color for contrast */
-    border: 1px solid #ddd;     /* Light gray border */
-    border-radius: 5px;         /* Rounded corners */
-    padding: 15px;              /* Padding around the content */
-    margin: 15px 0;             /* Margin above and below the box */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.donation-stats p {
-    margin: 5px 0;              /* Spacing between paragraphs */
-    font-size: 1.1em;           /* Slightly larger text */
-    color: #333;                /* Dark gray text color for readability */
-}
-
-.donation-stats strong {
-    color: #0056b3;             /* Blue color for the strong emphasis */
-}
-
 
 h2 {
     text-align: center;
@@ -459,8 +438,8 @@ footer {
 .form-section h1 {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(255, 255, 255);
-    margin-bottom: 25px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
     /* Adjust this value to control how far above the form the heading is */
     position: relative;
     z-index: 2;
@@ -492,26 +471,22 @@ footer {
 
 /* General Styles for Header and Nav */
 header {
+
     background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+
+
+    /* Light background for contrast */
     padding: 10px 20px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     height: 100px;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-content: space-around;
 }
 
 nav {
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
-    background: rgba(255, 255, 255, 0.8);
-    /* White background with opacity */
-    backdrop-filter: blur(400px);
-    /* Apply blur effect */
-    border-radius: 10px;
-    /* Optional: Add rounded corners */
+    background: linear-gradient(to bottom, #ff0000 0%, #ffffff 100%);
+
 
     /* Light background for contrast */
 
@@ -536,12 +511,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     font-weight: bold;
-    font-size: 20px;
-    /* Increase font size */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Professional font family */
     transition: color 0.3s;
 }
 
@@ -1093,4 +1064,39 @@ ul {
     /* Ensure feedback form is above the background */
     position: relative;
     /* Positioning to maintain hierarchy */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
